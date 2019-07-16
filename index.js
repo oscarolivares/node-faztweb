@@ -1,5 +1,13 @@
-// Modulo con funciones del OS
-const os = require('os');
+const fs = require('fs');
 
-console.log('Total mem', (os.totalmem()/1073741824).toPrecision(2), 'Gb')
-console.log('Free mem', (os.freemem()/1073741824).toPrecision(2), 'Gb');
+// Codigo asincrono con callback 'fuction(err)'
+fs.writeFile('./texto.txt', 'linea uno', function(err) {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log('Archivo creado');
+    
+  }
+});
+
+console.log('codigo siguiente');
